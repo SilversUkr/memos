@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пам'ятка: Чек-лист перед зйомкою</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --accent: #007aff;
+            --card: #f5f5f7;
+            --border: #e5e5e5;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #000000;
+                --text: #f5f5f7;
+                --accent: #0a84ff;
+                --card: #1c1c1e;
+                --border: #38383a;
+            }
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        header { margin-bottom: 30px; text-align: center; }
+        h1 { font-weight: 800; font-size: 28px; letter-spacing: -0.5px; margin-bottom: 8px; }
+        .subtitle { opacity: 0.6; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .image-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: var(--card);
+            border: 1px dashed var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        .image-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+        .image-placeholder::after { content: 'Фото буде тут'; opacity: 0.3; font-size: 12px; }
+
+        .checklist { list-style: none; margin-bottom: 30px; }
+        .checklist li {
+            background: var(--card);
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .checklist li::before {
+            content: '✓';
+            color: var(--accent);
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .info-block {
+            padding: 20px;
+            background: var(--accent);
+            color: white;
+            border-radius: 16px;
+            margin-bottom: 30px;
+        }
+        .info-block h2 { font-size: 18px; margin-bottom: 10px; }
+        .info-block p { opacity: 0.9; font-size: 15px; }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            opacity: 0.5;
+            font-size: 12px;
+        }
+        .qr-code {
+            margin-top: 20px;
+            width: 120px;
+            height: 120px;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p class="subtitle">Інструкція №01</p>
+        <h1>Чек-лист камери</h1>
+    </header>
+
+    <div class="image-placeholder">
+        <!-- <img src="camera_photo.jpg" alt="Camera"> -->
+    </div>
+
+    <ul class="checklist">
+        <li>Заряд АКБ (мінімум 2шт)</li>
+        <li>Карти пам'яті (чисті)</li>
+        <li>Об'єктив протертий</li>
+        <li>Звук перевірений (петлі)</li>
+    </ul>
+
+    <div class="info-block">
+        <h2>Важливо:</h2>
+        <p>Якщо знімаємо в приміщенні — баланс білого 3200К, якщо на вулиці — 5600К. Не забувайте про ND-фільтри!</p>
+    </div>
+
+    <div class="image-placeholder" style="aspect-ratio: 4/3;">
+        <!-- <img src="setup_photo.jpg" alt="Setup"> -->
+    </div>
+
+    <footer>
+        <p>Пам'ятка створена диспетчером Accio Silvers</p>
+        <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://silversukr.github.io/memos/" alt="QR Code" width="100">
+        </div>
+        <p style="margin-top: 10px;">Відскануй, щоб відкрити в браузері</p>
+    </footer>
+</body>
+</html>
+
