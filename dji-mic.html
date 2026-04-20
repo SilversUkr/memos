@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJI Mic 2: Професійна Пам'ятка Production Manager</title>
+    <style>
+        :root {
+            --primary: #f0f0f0;
+            --secondary: #a0a0a0;
+            --accent: #ffcc00; /* DJI yellow */
+            --bg: #121212;
+            --card-bg: #1e1e1e;
+            --text: #e0e0e0;
+            --success: #4caf50;
+            --danger: #f44336;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 40px;
+        }
+        h1 { margin: 0; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
+        h2 { border-left: 5px solid var(--accent); padding-left: 15px; margin-top: 40px; color: var(--primary); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: var(--card-bg); padding: 20px; border-radius: 8px; border: 1px solid #333; }
+        .card h3 { margin-top: 0; color: var(--accent); }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #252525; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #444; }
+        th { background-color: #333; color: var(--accent); }
+        tr:hover { background-color: #2a2a2a; }
+        .mode-icon { font-weight: bold; padding: 2px 8px; border-radius: 4px; background: #444; color: var(--accent); margin-right: 10px; }
+        .path { font-family: monospace; color: var(--accent); background: #000; padding: 2px 5px; border-radius: 3px; }
+        .tip { background: #2e3b2e; border-left: 5px solid var(--success); padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .warning { background: #3b2e2e; border-left: 5px solid var(--danger); padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .footer { text-align: center; margin-top: 50px; font-size: 0.8em; color: var(--secondary); border-top: 1px solid #333; padding-top: 20px; }
+        .ui-nav { display: flex; align-items: center; gap: 10px; font-size: 1.1em; margin-bottom: 10px; }
+        .swipe-icon { font-size: 1.5em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DJI Mic 2: Швидка База Знань</h1>
+            <p>Production Manager & Sound Workflow Guide v1.0</p>
+        </header>
+
+        <section id="modes">
+            <h2>1. Режими Запису та Виходу (Output)</h2>
+            <p>Налаштування режиму визначає, як звук потрапляє на камеру. Зміна режиму: Тапніть іконку режиму на головному екрані або в меню.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3><span class="mode-icon">M</span> Mono</h3>
+                    <p>Змішує обидва передавачі в один канал. <br><strong>Застосування:</strong> Прямі ефіри, швидка видача без монтажу.</p>
+                </div>
+                <div class="card">
+                    <h3><span class="mode-icon">S</span> Stereo</h3>
+                    <p>Т1 — лівий канал, Т2 — правий. <br><strong>Застосування:</strong> Золотий стандарт для інтерв'ю. Можливість окремої обробки голосів.</p>
+                </div>
+                <div class="card">
+                    <h3><span class="mode-icon">Ms</span> Safety Track</h3>
+                    <p>Лівий — основний (-0 дБ), правий — дублюючий (-6 дБ). <br><strong>Застосування:</strong> Страховка від кліппінгу (перегрузу) при непередбачуваних криках.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="internal">
+            <h2>2. Внутрішній запис (Internal Recording)</h2>
+            <div class="tip">
+                <strong>Лайфхак:</strong> 32-bit Float дозволяє відновити звук навіть якщо він "пішов у червоне" на запису. Це "RAW для звуку".
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Як увімкнути запис?</h3>
+                    <ul>
+                        <li><strong>Вручну:</strong> Натисніть кнопку REC (з червоною цяткою) на боці передавача. Індикатор загориться червоним.</li>
+                        <li><strong>Автоматично:</strong> <span class="path">Swipe Down</span> → <span class="path">Transmitter Settings</span> → <span class="path">Auto Record</span> → <span class="path">ON</span>. Запис стартує одразу при ввімкненні мікрофона.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Як злити звук на комп'ютер?</h3>
+                    <p>Підключіть передавач до ПК через кабель USB-C. Він розпізнається як звичайна флешка (Mass Storage).</p>
+                    <p><strong>Важливо:</strong> Використовуйте оригінальний кабель або якісний дата-кабель. Дешеві кабелі для зарядки можуть не бачити файли.</p>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Режим</th>
+                        <th>Бітова глибина</th>
+                        <th>Макс. час (8 ГБ)</th>
+                        <th>Крок автозбереження</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Standard</td>
+                        <td>24-bit</td>
+                        <td>~14 годин</td>
+                        <td>Кожні 30 хв</td>
+                    </tr>
+                    <tr>
+                        <td><strong>High Quality</strong></td>
+                        <td><strong>32-bit Float</strong></td>
+                        <td>~11 годин</td>
+                        <td>Кожні 23 хв</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>Налаштування 32-bit:</strong> <span class="path">Swipe Down</span> → <span class="path">Transmitter Settings</span> → <span class="path">32-bit Float</span> → <span class="path">ON</span>.</p>
+        </section>
+
+        <section id="levels">
+            <h2>3. Рівні Посилення (Gain)</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Вихідний гейн (M / RX Gain)</h3>
+                    <p>Це "Майстер" рівень. Він визначає, наскільки гучний сигнал йде з приймача у вашу камеру Fujifilm або ТВ-камеру.</p>
+                    <p><strong>Де шукати:</strong> На головному екрані іконка "M" з цифрою (наприклад, +6dB).</p>
+                </div>
+                <div class="card">
+                    <h3>Гейн передавачів (TX Gain)</h3>
+                    <p>Це чутливість самих мікрофонів. Регулюється окремо для Т1 та Т2.</p>
+                    <p><strong>Коли міняти:</strong> Якщо один герой говорить пошепки, а інший кричить — підтягніть гейн саме того мікрофона, який звучить тихо.</p>
+                </div>
+            </div>
+            
+            <p><strong>Для Fujifilm (наші основні камери):</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Камера</th>
+                        <th>RX Gain (M)</th>
+                        <th>Camera Internal Gain</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fujifilm X-Series</td>
+                        <td><strong>+6 дБ</strong></td>
+                        <td><strong>-28.5 дБ</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="tip">
+                <strong>Порада для TV-камер:</strong> Для XLR-входів ставте вихід (M) на <strong>0 дБ</strong>, а рівень регулюйте фізичними колесами на камері.
+            </div>
+        </section>
+
+        <section id="linking">
+            <h2>4. Як зв'язати (Link) базу та мікрофони</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Спосіб 1: Через кейс (Авто)</h3>
+                    <p>Покладіть передавачі та приймач у зарядний кейс. Вони з'єднаються автоматично протягом кількох секунд.</p>
+                </div>
+                <div class="card">
+                    <h3>Спосіб 2: Вручну (Manual)</h3>
+                    <ol>
+                        <li>На приймачі: <span class="path">Swipe Down</span> → <span class="path">Settings</span> → <span class="path">Link Device</span>.</li>
+                        <li>На передавачі: Затисніть кнопку <strong>Link</strong> (збоку, під кнопкою живлення) на 2 секунди.</li>
+                        <li>Світлодіод почне швидко блимати синім, а потім стане <strong>зеленим</strong> — зв'язок встановлено.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="noise">
+            <h2>5. Шумозаглушення (Intelligent Noise Cancelling)</h2>
+            <p>Активація: Подвійне натискання кнопки живлення на TX (жовтий індикатор) або через меню RX.</p>
+            <ul>
+                <li><strong>Basic:</strong> Для приміщень (кондиціонери, гул). Мінімум спотворень.</li>
+                <li><strong>Strong:</strong> Для вулиці та будмайданчиків. Голос може бути "металевим".</li>
+            </ul>
+            <div class="warning">
+                <strong>Порада профі:</strong> Якщо є час на пост-продакшн, краще писати "чистий" сигнал і використовувати AI (Adobe Podcast, iZotope RX) на монтажі.
+            </div>
+        </section>
+
+        <section id="nav">
+            <h2>5. Швидка Навігація</h2>
+            <div class="grid" style="margin-top:20px;">
+                <div class="card">
+                    <div class="ui-nav"><span class="swipe-icon">⬇️</span> Swipe Down</div>
+                    <p>Контрольне меню (Яскравість, Linking, 32-bit, Налаштування).</p>
+                </div>
+                <div class="card">
+                    <div class="ui-nav"><span class="swipe-icon">⬆️</span> Swipe Up</div>
+                    <p>Швидке налаштування Гейну (RX Gain, TX Gain).</p>
+                </div>
+                <div class="card">
+                    <div class="ui-nav"><span class="swipe-icon">↔️</span> Swipe Left/Right</div>
+                    <p>Детальна інформація про кожен передавач (Статус пам'яті, версія).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tips">
+            <h2>6. Робочі Лайфхаки</h2>
+            <ul>
+                <li><strong>Прихований монтаж:</strong> Використовуйте магніти (у комплекті) для кріплення під футболку. Чорний прозорий корпус (Shadow Black) менш помітний на темному одязі.</li>
+                <li><strong>Auto Record Sync:</strong> Увімкніть синхронізацію запису в меню, щоб ТХ починав запис у внутрішню пам'ять автоматично при ввімкненні.</li>
+                <li><strong>Яскравість екрану:</strong> <span class="path">Swipe Down</span> → <span class="path">Settings</span> → <span class="path">Brightness</span>. Ставте 100% на вулиці та 30% у студії для економії батареї.</li>
+            </ul>
+        </section>
+
+        <div class="footer">
+            <p>Зібрано для Продакшну Сергія Срібного. 2026. <br>Всі права на DJI Mic 2 належать DJI.</p>
+        </div>
+    </div>
+</body>
+</html>
