@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пам'ятка: PeopleMedia & СІТКИ</title>
+    <title>Пам'ятка: Оперативні завдання</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #ffffff;
             --text: #1a1a1a;
-            --accent: #d32f2f; /* Червоний акцент для медіа */
+            --accent: #d32f2f;
+            --secondary: #007aff;
             --card: #f5f5f7;
             --border: #e5e5e5;
             --shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -19,6 +20,7 @@
                 --bg: #000000;
                 --text: #f5f5f7;
                 --accent: #ff5252;
+                --secondary: #0a84ff;
                 --card: #1c1c1e;
                 --border: #38383a;
                 --shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -62,6 +64,8 @@
             border-radius: 50%;
             margin-right: 10px;
         }
+        .section-blue .section-title { color: var(--secondary); }
+        .section-blue .section-title::before { background: var(--secondary); }
 
         .checklist { list-style: none; }
         .checklist li {
@@ -78,6 +82,28 @@
             margin-right: 12px;
             font-weight: bold;
         }
+        .section-blue .checklist li::before { color: var(--secondary); }
+
+        .product-card {
+            display: flex;
+            background: var(--bg);
+            padding: 12px;
+            border-radius: 12px;
+            margin-top: 10px;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+        }
+        .product-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            margin-right: 15px;
+            object-fit: contain;
+            background: white;
+        }
+        .product-info h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+        .product-info p { font-size: 12px; color: var(--secondary); font-weight: 700; }
 
         .speaker-card {
             display: flex;
@@ -91,7 +117,6 @@
         .speaker-photo {
             width: 50px;
             height: 50px;
-            background: #ccc;
             border-radius: 50%;
             margin-right: 15px;
             overflow: hidden;
@@ -100,19 +125,6 @@
         .speaker-photo img { width: 100%; height: 100%; object-fit: cover; }
         .speaker-info h3 { font-size: 14px; font-weight: 700; }
         .speaker-info p { font-size: 12px; opacity: 0.6; }
-
-        .warning-box {
-            background: #fff3e0;
-            color: #e65100;
-            padding: 15px;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-        @media (prefers-color-scheme: dark) {
-            .warning-box { background: #3e2723; color: #ffab91; }
-        }
 
         footer {
             text-align: center;
@@ -136,22 +148,18 @@
 <body>
     <header>
         <p class="subtitle">Оперативна пам'ятка</p>
-        <h1>Проєкти: PM & СІТКИ</h1>
+        <h1>Проєкти & Закупівлі</h1>
     </header>
 
-    <!-- PeopleMedia Section -->
+    <!-- Projects Section -->
     <div class="section">
-        <div class="section-title">PeopleMedia</div>
+        <div class="section-title">PeopleMedia & СІТКИ</div>
         <ul class="checklist">
-            <li><strong>Формат:</strong> Тільки 4K зйомка.</li>
-            <li><strong>Звук:</strong> Петличка DJI + вітрозахист PM.</li>
-            <li><strong>Реквізит:</strong> Перевірити наявність прапорів (офіс PM).</li>
-            <li><strong>Storage:</strong> Злив матеріалу на диск [R].</li>
+            <li><strong>PM:</strong> 4K, DJI петля, прапори РМ, диск [R].</li>
+            <li><strong>СІТКИ:</strong> Гумдопомога, дрон, прапори БФ.</li>
         </ul>
         
-        <p style="font-size: 12px; font-weight: 700; margin-top: 15px; opacity: 0.7;">ВАЖЛИВІ СПІКЕРИ:</p>
-        
-        <div class="speaker-card">
+        <div class="speaker-card" style="margin-top:15px;">
             <div class="speaker-photo">
                 <img src="https://sc01.alicdn.com/kf/A1c88ba5025b543c1af1f8a0627252b1dP.png" alt="Artem Koliubaiev">
             </div>
@@ -160,26 +168,39 @@
                 <p>Голова «Кіноспілки»</p>
             </div>
         </div>
-
-        <div class="speaker-card">
-            <div class="speaker-photo">
-                <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#eee; color:#999; font-size:10px;">ФОТО</div>
-            </div>
-            <div class="speaker-info">
-                <h3>Олег Гриб</h3>
-                <p>Ключовий спікер</p>
-            </div>
-        </div>
     </div>
 
-    <!-- СІТКИ Section -->
-    <div class="section">
-        <div class="section-title">СІТКИ (Гумдопомога)</div>
+    <!-- Purchases Section -->
+    <div class="section section-blue">
+        <div class="section-title">Закупівлі (Операторський)</div>
         <ul class="checklist">
-            <li><strong>Акція:</strong> Постійна передача гумдопомоги.</li>
-            <li><strong>Дрон:</strong> Можливе використання (захопити комплект).</li>
-            <li><strong>Реквізит:</strong> Обов'язково прапори БФ.</li>
+            <li><strong>Канцелярія:</strong> Ножиці(!), ручки, маркери, стакан.</li>
+            <li><strong>Організація:</strong> Коробочки для дрібниць (Jysk/Novus, 40 грн).</li>
+            <li><strong>Очищення:</strong> Якісний засіб для пластику (не пошкодити гуму) + мікрофібра.</li>
+            <li><strong>Обладнання:</strong> Дошка (маркерна або пробкова).</li>
         </ul>
+
+        <p style="font-size: 12px; font-weight: 700; margin: 15px 0 5px 0; opacity: 0.7;">ОПТИКА (Безальтернативно):</p>
+        
+        <a href="https://www.amazon.com/dp/B0030E4UIQ" class="product-card">
+            <img src="https://m.media-amazon.com/images/I/717pcVKLTuL._SS100_.jpg" class="product-img" alt="Zeiss">
+            <div class="product-info">
+                <h3>ZEISS Lens Wipes (Спиртові)</h3>
+                <p>$15.12 (200 шт)</p>
+            </div>
+        </a>
+
+        <a href="https://www.amazon.com/Professional-Kimtech-Science-Kimwipes-280/dp/B00T24KABO" class="product-card">
+            <img src="https://m.media-amazon.com/images/I/41nU5ZKQkhL._SS75_.jpg" class="product-img" alt="Kimwipes">
+            <div class="product-info">
+                <h3>Kimtech Science (Сухі, безворсові)</h3>
+                <p>~$6.00 (280 шт)</p>
+            </div>
+        </a>
+        
+        <p style="font-size: 11px; opacity: 0.6; margin-top: 10px; font-style: italic;">
+            * Серветок вистачить на 1-2 роки.
+        </p>
     </div>
 
     <div class="qr-area">
