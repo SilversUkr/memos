@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пам'ятка: PeopleMedia & СІТКИ</title>
+    <title>Закупівлі: Операторський відділ</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #ffffff;
             --text: #1a1a1a;
-            --accent: #d32f2f;
+            --accent: #007aff;
             --card: #f5f5f7;
             --border: #e5e5e5;
             --shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -18,7 +18,7 @@
             :root {
                 --bg: #000000;
                 --text: #f5f5f7;
-                --accent: #ff5252;
+                --accent: #0a84ff;
                 --card: #1c1c1e;
                 --border: #38383a;
                 --shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -79,26 +79,26 @@
             font-weight: bold;
         }
 
-        .speaker-card {
+        .product-card {
             display: flex;
-            align-items: center;
             background: var(--bg);
             padding: 12px;
             border-radius: 12px;
             margin-top: 10px;
             border: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
         }
-        .speaker-photo {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        .product-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
             margin-right: 15px;
-            overflow: hidden;
-            flex-shrink: 0;
+            object-fit: contain;
+            background: white;
         }
-        .speaker-photo img { width: 100%; height: 100%; object-fit: cover; }
-        .speaker-info h3 { font-size: 14px; font-weight: 700; }
-        .speaker-info p { font-size: 12px; opacity: 0.6; }
+        .product-info h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+        .product-info p { font-size: 12px; color: var(--accent); font-weight: 700; }
 
         footer {
             text-align: center;
@@ -121,44 +121,43 @@
 </head>
 <body>
     <header>
-        <p class="subtitle">Оперативна пам'ятка</p>
-        <h1>Проєкти: PM & СІТКИ</h1>
+        <p class="subtitle">Поточні закупівлі</p>
+        <h1>Операторський відділ</h1>
     </header>
 
     <div class="section">
-        <div class="section-title">PeopleMedia</div>
+        <div class="section-title">Список необхідного</div>
         <ul class="checklist">
-            <li><strong>Формат:</strong> Тільки 4K зйомка.</li>
-            <li><strong>Звук:</strong> Петличка DJI + вітрозахист PM.</li>
-            <li><strong>Реквізит:</strong> Перевірити наявність прапорів (офіс PM).</li>
-            <li><strong>Storage:</strong> Злив матеріалу на диск [R].</li>
+            <li><strong>Канцелярія:</strong> Ножиці(!), ручки, маркери, стакан.</li>
+            <li><strong>Організація:</strong> Коробочки для дрібниць (Jysk/Novus, 40 грн).</li>
+            <li><strong>Очищення:</strong> Засіб для пластику (безпечний для гуми) + мікрофібра.</li>
+            <li><strong>Обладнання:</strong> Дошка (маркерна або пробкова).</li>
         </ul>
-        
-        <div class="speaker-card" style="margin-top:15px;">
-            <div class="speaker-photo">
-                <img src="https://sc01.alicdn.com/kf/A1c88ba5025b543c1af1f8a0627252b1dP.png" alt="Artem Koliubaiev">
-            </div>
-            <div class="speaker-info">
-                <h3>Артем Колюбаєв</h3>
-                <p>Голова «Кіноспілки»</p>
-            </div>
-        </div>
-    </div>
 
-    <div class="section">
-        <div class="section-title">СІТКИ (Гумдопомога)</div>
-        <ul class="checklist">
-            <li><strong>Акція:</strong> Постійна передача гумдопомоги.</li>
-            <li><strong>Дрон:</strong> Можливе використання.</li>
-            <li><strong>Реквізит:</strong> Обов'язково прапори БФ.</li>
-        </ul>
+        <p style="font-size: 12px; font-weight: 700; margin: 15px 0 5px 0; opacity: 0.7;">ОПТИКА (Безальтернативно):</p>
+        
+        <a href="https://www.amazon.com/dp/B0030E4UIQ" class="product-card">
+            <img src="https://m.media-amazon.com/images/I/717pcVKLTuL._SS100_.jpg" class="product-img" alt="Zeiss">
+            <div class="product-info">
+                <h3>ZEISS Lens Wipes (Спиртові)</h3>
+                <p>$15.12 (200 шт)</p>
+            </div>
+        </a>
+
+        <a href="https://www.amazon.com/Professional-Kimtech-Science-Kimwipes-280/dp/B00T24KABO" class="product-card">
+            <img src="https://m.media-amazon.com/images/I/41nU5ZKQkhL._SS75_.jpg" class="product-img" alt="Kimwipes">
+            <div class="product-info">
+                <h3>Kimtech Science (Сухі, безворсові)</h3>
+                <p>~$6.00 (280 шт)</p>
+            </div>
+        </a>
     </div>
 
     <div class="qr-area">
         <div class="qr-code">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://silversukr.github.io/memos/" alt="QR" width="120">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://silversukr.github.io/memos/buy" alt="QR" width="120">
         </div>
-        <p style="font-size: 10px; opacity: 0.5; margin-top: 8px;">Статичний код доступу до ПРОЄКТІВ</p>
+        <p style="font-size: 10px; opacity: 0.5; margin-top: 8px;">Статичний код доступу до ЗАКУПІВЕЛЬ</p>
     </div>
 
     <footer>
