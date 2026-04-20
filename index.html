@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пам'ятка: Чек-лист перед зйомкою</title>
+    <title>Пам'ятка: PeopleMedia & СІТКИ</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #ffffff;
             --text: #1a1a1a;
-            --accent: #007aff;
+            --accent: #d32f2f; /* Червоний акцент для медіа */
             --card: #f5f5f7;
             --border: #e5e5e5;
+            --shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
         @media (prefers-color-scheme: dark) {
             :root {
                 --bg: #000000;
                 --text: #f5f5f7;
-                --accent: #0a84ff;
+                --accent: #ff5252;
                 --card: #1c1c1e;
                 --border: #38383a;
+                --shadow: 0 4px 20px rgba(0,0,0,0.3);
             }
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,111 +29,171 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.5;
             padding: 20px;
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
         }
-        header { margin-bottom: 30px; text-align: center; }
-        h1 { font-weight: 800; font-size: 28px; letter-spacing: -0.5px; margin-bottom: 8px; }
-        .subtitle { opacity: 0.6; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        header { margin-bottom: 24px; text-align: left; border-left: 4px solid var(--accent); padding-left: 15px; }
+        h1 { font-weight: 800; font-size: 24px; letter-spacing: -0.5px; }
+        .subtitle { opacity: 0.5; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; }
         
-        .image-placeholder {
-            width: 100%;
-            aspect-ratio: 16/9;
+        .section {
             background: var(--card);
-            border: 1px dashed var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            overflow: hidden;
-            position: relative;
-        }
-        .image-placeholder img { width: 100%; height: 100%; object-fit: cover; }
-        .image-placeholder::after { content: 'Фото буде тут'; opacity: 0.3; font-size: 12px; }
-
-        .checklist { list-style: none; margin-bottom: 30px; }
-        .checklist li {
-            background: var(--card);
-            padding: 16px;
-            border-radius: 12px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            font-weight: 600;
-            border: 1px solid transparent;
-            transition: all 0.2s ease;
-        }
-        .checklist li::before {
-            content: '✓';
-            color: var(--accent);
-            margin-right: 15px;
-            font-size: 20px;
-        }
-
-        .info-block {
+            border-radius: 20px;
             padding: 20px;
-            background: var(--accent);
-            color: white;
-            border-radius: 16px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
         }
-        .info-block h2 { font-size: 18px; margin-bottom: 10px; }
-        .info-block p { opacity: 0.9; font-size: 15px; }
+        .section-title {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            color: var(--accent);
+        }
+        .section-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .checklist { list-style: none; }
+        .checklist li {
+            padding: 10px 0;
+            display: flex;
+            align-items: flex-start;
+            font-size: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist li::before {
+            content: '•';
+            color: var(--accent);
+            margin-right: 12px;
+            font-weight: bold;
+        }
+
+        .speaker-card {
+            display: flex;
+            align-items: center;
+            background: var(--bg);
+            padding: 12px;
+            border-radius: 12px;
+            margin-top: 10px;
+            border: 1px solid var(--border);
+        }
+        .speaker-photo {
+            width: 50px;
+            height: 50px;
+            background: #ccc;
+            border-radius: 50%;
+            margin-right: 15px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .speaker-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .speaker-info h3 { font-size: 14px; font-weight: 700; }
+        .speaker-info p { font-size: 12px; opacity: 0.6; }
+
+        .warning-box {
+            background: #fff3e0;
+            color: #e65100;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        @media (prefers-color-scheme: dark) {
+            .warning-box { background: #3e2723; color: #ffab91; }
+        }
 
         footer {
             text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid var(--border);
-            opacity: 0.5;
-            font-size: 12px;
+            padding: 30px 0;
+            opacity: 0.4;
+            font-size: 11px;
+        }
+        .qr-area {
+            margin: 20px 0;
+            text-align: center;
         }
         .qr-code {
-            margin-top: 20px;
-            width: 120px;
-            height: 120px;
             padding: 10px;
             background: white;
-            border-radius: 8px;
+            border-radius: 12px;
             display: inline-block;
+            box-shadow: var(--shadow);
         }
     </style>
 </head>
 <body>
     <header>
-        <p class="subtitle">Інструкція №01</p>
-        <h1>Чек-лист камери</h1>
+        <p class="subtitle">Оперативна пам'ятка</p>
+        <h1>Проєкти: PM & СІТКИ</h1>
     </header>
 
-    <div class="image-placeholder">
-        <!-- <img src="camera_photo.jpg" alt="Camera"> -->
+    <!-- PeopleMedia Section -->
+    <div class="section">
+        <div class="section-title">PeopleMedia</div>
+        <ul class="checklist">
+            <li><strong>Формат:</strong> Тільки 4K зйомка.</li>
+            <li><strong>Звук:</strong> Петличка DJI + вітрозахист PM.</li>
+            <li><strong>Реквізит:</strong> Перевірити наявність прапорів (офіс PM).</li>
+            <li><strong>Storage:</strong> Злив матеріалу на диск [R].</li>
+        </ul>
+        
+        <p style="font-size: 12px; font-weight: 700; margin-top: 15px; opacity: 0.7;">ВАЖЛИВІ СПІКЕРИ:</p>
+        
+        <div class="speaker-card">
+            <div class="speaker-photo">
+                <img src="https://sc01.alicdn.com/kf/A1c88ba5025b543c1af1f8a0627252b1dP.png" alt="Artem Koliubaiev">
+            </div>
+            <div class="speaker-info">
+                <h3>Артем Колюбаєв</h3>
+                <p>Голова «Кіноспілки»</p>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-photo">
+                <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#eee; color:#999; font-size:10px;">ФОТО</div>
+            </div>
+            <div class="speaker-info">
+                <h3>Олег Гриб</h3>
+                <p>Ключовий спікер</p>
+            </div>
+        </div>
     </div>
 
-    <ul class="checklist">
-        <li>Заряд АКБ (мінімум 2шт)</li>
-        <li>Карти пам'яті (чисті)</li>
-        <li>Об'єктив протертий</li>
-        <li>Звук перевірений (петлі)</li>
-    </ul>
-
-    <div class="info-block">
-        <h2>Важливо:</h2>
-        <p>Якщо знімаємо в приміщенні — баланс білого 3200К, якщо на вулиці — 5600К. Не забувайте про ND-фільтри!</p>
+    <!-- СІТКИ Section -->
+    <div class="section">
+        <div class="section-title">СІТКИ (Гумдопомога)</div>
+        <ul class="checklist">
+            <li><strong>Акція:</strong> Постійна передача гумдопомоги.</li>
+            <li><strong>Дрон:</strong> Можливе використання (захопити комплект).</li>
+            <li><strong>Реквізит:</strong> Обов'язково прапори БФ.</li>
+        </ul>
+        <div class="warning-box">
+            Уточнюйте безпекову ситуацію перед підйомом дрона!
+        </div>
     </div>
 
-    <div class="image-placeholder" style="aspect-ratio: 4/3;">
-        <!-- <img src="setup_photo.jpg" alt="Setup"> -->
+    <div class="qr-area">
+        <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://silversukr.github.io/memos/" alt="QR" width="120">
+        </div>
+        <p style="font-size: 10px; opacity: 0.5; margin-top: 8px;">Статичний код доступу</p>
     </div>
 
     <footer>
-        <p>Пам'ятка створена диспетчером Accio Silvers</p>
-        <div class="qr-code">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://silversukr.github.io/memos/" alt="QR Code" width="100">
-        </div>
-        <p style="margin-top: 10px;">Відскануй, щоб відкрити в браузері</p>
+        <p>Диспетчерська служба Accio Silvers © 2026</p>
     </footer>
 </body>
 </html>
-
