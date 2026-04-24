@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoloBox Mini: Експертна База Знань</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f0f0f0;
+            --secondary: #a0a0a0;
+            --accent: #ff4500; /* YoloLiv Orange */
+            --bg: #121212;
+            --card-bg: #1e1e1e;
+            --text: #e0e0e0;
+            --success: #4caf50;
+            --danger: #f44336;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 40px;
+        }
+        h1 { margin: 0; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
+        h2 { border-left: 5px solid var(--accent); padding-left: 15px; margin-top: 40px; color: var(--primary); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: var(--card-bg); padding: 20px; border-radius: 8px; border: 1px solid #333; }
+        .card h3 { margin-top: 0; color: var(--accent); }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #252525; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #444; }
+        th { background-color: #333; color: var(--accent); }
+        tr:hover { background-color: #2a2a2a; }
+        .path { font-family: monospace; color: var(--accent); background: #000; padding: 2px 5px; border-radius: 3px; }
+        .tip { background: #2e3b2e; border-left: 5px solid var(--success); padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .warning { background: #3b2e2e; border-left: 5px solid var(--danger); padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .footer { text-align: center; margin-top: 50px; font-size: 0.8em; color: var(--secondary); border-top: 1px solid #333; padding-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>YoloBox Mini: Експертна База Знань</h1>
+            <p>All-in-One Encoder, Switcher & Monitor Guide</p>
+        </header>
+
+        <section id="interface">
+            <h2>1. Залізо та Кнопки (Physical Layout)</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Фізичні елементи</h3>
+                    <ul>
+                        <li><strong>Кнопка живлення:</strong> Зверху праворуч. Коротке натискання — сон, довге — увімкнення/вимкнення.</li>
+                        <li><strong>SIM-слот:</strong> Зліва. Підтримує 4G LTE.</li>
+                        <li><strong>SD-слот:</strong> Знизу. Для запису та медіафайлів.</li>
+                        <li><strong>Різьба 1/4":</strong> Для кріплення на камеру або штатив.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Порти підключення</h3>
+                    <ul>
+                        <li><strong>HDMI In:</strong> Основна камера.</li>
+                        <li><strong>USB-A:</strong> Вебкамера або USB-мікрофон.</li>
+                        <li><strong>Audio In (3.5mm):</strong> Mic/Line рівень (перемикається в меню).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="network">
+            <h2>2. Налаштування Мережі (Network)</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Пріоритети підключення</h3>
+                    <ol>
+                        <li><strong>Ethernet:</strong> Завжди №1 для стабільності.</li>
+                        <li><strong>4G LTE:</strong> Потребує Nano-SIM (без PIN-коду).</li>
+                        <li><strong>Wi-Fi:</strong> Тільки за умови стабільного сигналу роутера.</li>
+                    </ol>
+                </div>
+                <div class="card">
+                    <h3>Bonding (Об'єднання)</h3>
+                    <p>Об'єднання Ethernet + 4G + Wi-Fi працює через платну підписку <strong>YoloLiv Cloud</strong>. <br>Шлях: <span class="path">Account</span> → <span class="path">Network Settings</span>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="streaming">
+            <h2>3. Сервер та Стрімінг (RTMP)</h2>
+            <div class="card">
+                <h3>Запуск трансляції</h3>
+                <ol>
+                    <li>Створіть "Live Stream", натиснувши <strong>"+"</strong>.</li>
+                    <li>Додайте платформу через <strong>Add</strong> або виберіть <strong>Custom RTMP</strong>.</li>
+                    <li>Введіть Server URL та Stream Key.</li>
+                    <li>Натисніть <strong>"GO LIVE"</strong> для старту.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="audio">
+            <h2>4. Налаштування Звуку (Audio Mixer)</h2>
+            <div class="tip">
+                <strong>Лайфхак:</strong> Використовуйте режим <strong>AFV (Audio Follow Video)</strong> тільки для 2+ джерел. Для однієї камери ставте звук "On".
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Функція</th>
+                        <th>Призначення</th>
+                        <th>Рекомендація</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Main Volume</td>
+                        <td>Майстер-рівень</td>
+                        <td>Піки в межах -6..-3 дБ</td>
+                    </tr>
+                    <tr>
+                        <td>Audio Delay</td>
+                        <td>Синхронізація звуку</td>
+                        <td>40-100 мс, якщо звук випереджає картинку</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="recording">
+            <h2>5. Запис на SD-карту</h2>
+            <div class="warning">
+                <strong>Критично:</strong> Використовуйте тільки карти <strong>U3 (V30)</strong>. Звичайні карти призводять до зависання пристрою.
+            </div>
+        </section>
+
+        <div class="footer">
+            <p>Зібрано для Продакшну Сергія Срібного. 2026. <br>Всі права на YoloBox Mini належать YoloLiv.</p>
+        </div>
+    </div>
+</body>
+</html>
